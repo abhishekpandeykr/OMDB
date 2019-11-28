@@ -3,5 +3,10 @@
     "printWidth": 120,
     "semi": true,
     "bracketSpacing": true,
-    "singleQuote": true
+    "singleQuote": true,
+    "arrowParens": "always",
+    "htmlWhitespaceSensitivity": "css",
+    "trailingComma": "es5",
+    "useTabs": true,
+    "cursorOffset": -1
 }

@@ -1,3 +1,22 @@
-<p>
-  landing-page works!
+<p *ngIf="landingResponse.length > 3">
+    Search Result for :
+    <b><i>{{ searchValue.value }}</i></b
+	>
 </p>
+<mat-grid-list cols="4">
+	<mat-grid-tile *ngFor="let movie of landingResponse; let i = index" [colspan]="1" [rowspan]="2">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<!-- <div mat-card-avatar class="example-header-image"></div> -->
+				<mat-card-title>{{ movie?.Title }}</mat-card-title>
+				<mat-card-subtitle>{{ movie?.Genre }}</mat-card-subtitle>
+			</mat-card-header>
+			<img mat-card-image src="{{ movie?.Poster }}" alt="" />
+			<mat-card-content>
+				<p>
+					{{ movie?.Plot }}
+				</p>
+			</mat-card-content>
+		</mat-card>
+	</mat-grid-tile>
+</mat-grid-list>

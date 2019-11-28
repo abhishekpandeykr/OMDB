@@ -1,22 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.styl']
+	selector: 'app-landing-page',
+	templateUrl: './landing-page.component.html',
+	styleUrls: ['./landing-page.component.styl'],
 })
 export class LandingPageComponent implements OnInit {
-  @Input() landingResponse: object;
-  constructor() {}
+	@Input() landingResponse;
+	@Input() searchValue: string;
+	constructor() {}
 
-  ngOnInit() {
-    console.log('df', this.landingResponse);
-  }
+	ngOnInit() {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    this.landingResponse = changes.landingResponse.currentValue;
-    console.log(this.landingResponse);
-  }
+	ngOnChanges(changes: SimpleChanges): void {
+		this.landingResponse = changes.landingResponse.currentValue;
+	}
 }
